@@ -11,7 +11,7 @@ def main():
                 replacing = line[start:end+1]
                 initialreplacing = replacing
                 key = ""
-                print(replacing)
+                print(line)
                 option = int(input("Press 1 to Get, 2 to Format or 3 to skip"))
                 if(option in [1,2,3]):
                     if(option == 1):
