@@ -1,6 +1,6 @@
 def main():
     while True:
-        fileToLoc = (raw_input("Enter the path of the file to localise"))
+        fileToLoc = (raw_input("Enter the path of the file to localise: "))
         f = open(fileToLoc, "r+")
         flines = f.readlines()
         output = []
@@ -12,16 +12,16 @@ def main():
                 initialreplacing = replacing
                 key = ""
                 print(line)
-                option = int(input("Press 1 to Get, 2 to Format or 3 to skip"))
+                option = int(input("Press 1 to Get, 2 to Format or 3 to skip: "))
                 if(option in [1,2,3]):
                     if(option == 1):
-                        key = raw_input("Enter the key for this value")
+                        key = raw_input("Enter the key for this value: ")
                         if(key):
                             line = line.replace(replacing, '_locFile.Get("' + key + '",' + replacing + ')')
                             print(line)
                     elif(option == 2):
-                        line = line.strip("$")
-                        key = raw_input("Enter the key for this value")
+                        line = line.replace('$','')
+                        key = raw_input("Enter the key for this value: ")
                         if(key):
                             skipping = 0
                             toreplace = []
